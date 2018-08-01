@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><tXML>
+	<Header>
+		<Source>Host</Source>
+		<Action_Type>Update</Action_Type>
+		<Reference_ID>080628201806</Reference_ID>
+		<Message_Type>PurchaseOrder</Message_Type>
+		<Company_ID>01</Company_ID>
+	</Header>
+	<Message>
+		<Order>
+			<OrderId>TESTPO65</OrderId>
+			<IsCancelled>false</IsCancelled>
+			<DestinationFacilityAliasId>09</DestinationFacilityAliasId>
+			<OriginCountryCode>IN</OriginCountryCode>
+			<BusinessPartnerCode>000306830</BusinessPartnerCode>
+			<PoDueDate>12/28/2018</PoDueDate>
+			<PODate>09/29/2018 00:00</PODate>
+			<CustomFieldList>
+				<CustomField/>
+				<CustomField/>
+			</CustomFieldList>
+			<LineItem>
+				<LineItemId>5930240020006</LineItemId>
+				<ItemName>5930240020005</ItemName>
+				<ActualCost>000000015.00</ActualCost>
+				<MvCurrencyCode>USD</MvCurrencyCode>
+				<Quantity>
+					<OrderQty>60</OrderQty>
+					<QtyUOM>Unit</QtyUOM>
+				</Quantity>
+			</LineItem>
+		</Order>
+	</Message>
+</tXML>
