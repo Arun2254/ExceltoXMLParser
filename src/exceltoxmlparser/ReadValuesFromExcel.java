@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -33,13 +35,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadValuesFromExcel {
 	
-	String destfilepath="support/Generated_POfiles/PO.xml";
-	//,String targetfilename
-	public void generatePOXML(List<String> arrList) throws InterruptedException, IOException {
+	String destfilepath=null;
+	public void generatePOXML(List<String> arrList,String targetfilename) throws InterruptedException, IOException {
 		PostXMLtoMQ pxmlmq = new PostXMLtoMQ();
 		try {
 			String filepath = "support/PO.xml";
-			
+			destfilepath="support/Generated_POfiles/PO.xml";
 			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 			Document doc = docBuilder.parse(filepath);
@@ -112,6 +113,16 @@ public class ReadValuesFromExcel {
 		   } catch (SAXException sae) {
 			sae.printStackTrace();
 		   }
-		pxmlmq.postmsgtoMQ(destfilepath);
+		String content = new String(Files.readAllBytes(Paths.get(destfilepath)), "UTF-8");
+		content=content.replaceAll("\\r\\n|\\r|\\n", " ");
+		content=content.replaceAll("\\s", "");
+		//content=content.replaceAll("whitespace", "");
+		content=content.replaceAll("><", "> <");
+		String path1="<?xmlversion=\"1.0\"encoding=\"UTF-8\"standalone=\"no\"?> <tXML>";
+		String path2="<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><tXML>";
+		content=content.replace(path1,path2);
+		content=content.replace("00:00", " 00:00");
+		System.out.println(content);
+		//pxmlmq.postmsgtoMQ(content);
 	}
 }

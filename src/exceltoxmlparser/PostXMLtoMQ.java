@@ -37,7 +37,7 @@ public class PostXMLtoMQ {
 //        props.put(MQConstants.HOST_NAME_PROPERTY, "tgphxwmmmq001.phx.gapinc.dev");
 //
         String qManager = "WMM01I";
-        String queueName = "QL.04.TEST.POET";
+        String queueName = "QA.21.MOSAIC.WMM.DPO";//"QL.04.TEST.POET";
         MQQueueManager qMgr = null;
         MQPutMessageOptions pmo =null;
         
@@ -62,7 +62,7 @@ public class PostXMLtoMQ {
             MQMessage mqMsg = new MQMessage();
             mqMsg.format = MQConstants.MQFMT_STRING;
             mqMsg.writeString(pomessage);
-            System.out.println("Message Posted Sucessfully into "+queueName);
+            System.out.println("Message Posted Sucessfully into the queue "+queueName);
             queue.put(mqMsg,pmo);
             queue.close();
             qMgr.disconnect();

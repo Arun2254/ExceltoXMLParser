@@ -8,24 +8,24 @@
 	</Header>
 	<Message>
 		<Order>
-			<OrderId>PESTPO68</OrderId>
+			<OrderId>ZESTPO68</OrderId>
 			<IsCancelled>false</IsCancelled>
-			<DestinationFacilityAliasId>12</DestinationFacilityAliasId>
+			<DestinationFacilityAliasId>21</DestinationFacilityAliasId>
 			<OriginCountryCode>IN</OriginCountryCode>
 			<BusinessPartnerCode>000306830</BusinessPartnerCode>
-			<PoDueDate>10/28/2018</PoDueDate>
-			<PODate>10/29/2018 00:00</PODate>
+			<PoDueDate>11/28/2018</PoDueDate>
+			<PODate>11/28/2018 00:00</PODate>
 			<CustomFieldList>
 				<CustomField/>
 				<CustomField/>
 			</CustomFieldList>
 			<LineItem>
-				<LineItemId>8930240020006</LineItemId>
-				<ItemName>8930240020005</ItemName>
+				<LineItemId>2918440020000</LineItemId>
+				<ItemName>2918440020000</ItemName>
 				<ActualCost>000000015.00</ActualCost>
 				<MvCurrencyCode>USD</MvCurrencyCode>
 				<Quantity>
-					<OrderQty>150</OrderQty>
+					<OrderQty>15</OrderQty>
 					<QtyUOM>Unit</QtyUOM>
 				</Quantity>
 			</LineItem>

@@ -81,7 +81,7 @@ public class ReadDataFromXlsX {
 	            // Add all the cell values of a particular row
 	            arrName.add(cell.getStringCellValue());
 	            }
-	        revfrmexcel.generatePOXML(arrName);//targetfilename+i+".xml");
+	        revfrmexcel.generatePOXML(arrName,targetfilename+i+".xml");
 	        //System.out.println(arrName.get(0));
 	        arrName.clear();
 	        // Create an iterator to iterate through the arrayList- 'arrName'
